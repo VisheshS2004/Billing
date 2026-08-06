@@ -1,0 +1,116 @@
+#print-bill-container {
+  display: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  #print-bill-container, #print-bill-container * {
+    visibility: visible;
+  }
+
+  #print-bill-container {
+    display: block !important;
+    position: relative !important;
+    width: 7.5cm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-bill-receipt {
+    display: block !important;
+    width: 7.5cm !important;
+    box-sizing: border-box !important;
+    padding: 0mm 3mm !important;
+    margin: 0 !important;
+    font-family: 'Inter', 'Roboto', sans-serif;
+    color: #000;
+  }
+
+  .receipt-header {
+    text-align: center;
+    margin-bottom: 6mm;
+  }
+  
+  .shop-name {
+    margin: 0 0 2mm 0;
+    font-size: 14pt;
+    font-weight: 700;
+  }
+  
+  .receipt-header p {
+    margin: 0;
+    font-size: 9pt;
+    color: #444;
+  }
+
+  .receipt-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9pt;
+    margin-bottom: 4mm;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 2mm 0;
+  }
+
+  .receipt-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 9pt !important;
+  }
+
+  .receipt-table tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    break-inside: avoid-page !important;
+  }
+
+  .receipt-table th, .receipt-table td {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .receipt-table th {
+    border-bottom: 1px solid #000;
+    padding: 2mm 0;
+  }
+
+  .receipt-table td {
+    padding: 1.5mm 0;
+  }
+
+  .receipt-footer {
+    margin-top: 4mm;
+    border-top: 1px solid #000;
+    padding-top: 2mm;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .total-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 11pt;
+    font-weight: bold;
+  }
+
+  .receipt-table th:first-child, .receipt-table td:first-child {
+    text-align: left !important;
+  }
+  .receipt-table th:nth-child(2), .receipt-table td:nth-child(2) {
+    text-align: left !important;
+  }
+  .receipt-table th:nth-child(3), .receipt-table td:nth-child(3) {
+    text-align: center !important;
+  }
+  .receipt-table th:nth-child(4), .receipt-table td:nth-child(4) {
+    text-align: right !important;
+  }
+  .thank-you {
+    display: none !important;
+  }
+}
